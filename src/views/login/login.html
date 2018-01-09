@@ -1,0 +1,29 @@
+
+<div class="login-contenedor" layout="column" layout-align="center center" layout-fill flex>
+	<md-card class="md-whiteframe-4dp">
+		<md-toolbar layout="row" layout-padding layout-align="start center">
+			<div>
+				<md-icon class="iconos-normales" md-svg-src="img/home-icono.svg"></md-icon>
+			</div>
+
+		</md-toolbar>
+		<md-card-content>
+			<form ng-submit="vm.logear()">
+				<md-input-container class="md-block">
+					<label>Email</label>
+					<input type="email" name="email" ng-model="vm.login.email" required>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Contraseña</label>
+					<input type="password" name="password" ng-model="vm.login.password" required>
+				</md-input-container>
+				<md-input-container layout layout-align="center">
+					<md-button type="submit" class="md-raised md-accent" flex="50">Ingresar</md-button>
+				</md-input-container>
+			</form>
+			<div style="text-align: center; font-size: 0.95em; padding-bottom: 10px;">
+				<span style="color: rgb(33,150,243); cursor: pointer" ng-click="vm.passRecovery($event)">¿Olvidaste tu contraseña?</span>
+			</div>
+		</md-card-content>
+	</md-card>
+</div>

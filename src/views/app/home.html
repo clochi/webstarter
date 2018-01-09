@@ -1,0 +1,65 @@
+<div layout="row" layout-align="center" layout-margin layout-xs="column">
+	<div flex-gt-xs="33" flex>
+		<pedidos></pedidos>
+	</div>
+	<div flex-gt-xs="33" flex>
+		<revendedores></revendedores>
+	</div>
+	<div flex-gt-xs="33" flex>
+		<combos></combos>
+	</div>
+
+</div>
+<div id="calendar"></div>
+<br>
+
+<md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+    <span>Nutrition</span>
+  </div>
+</md-toolbar>
+
+<mf-search data="usuario.usuarios" fields="['nombre', 'apellido', 'email', 'telefonoArea', 'telefonoNumero', 'direccion']"></mf-search>
+<md-table-container>
+  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
+        <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
+        <th md-column md-numeric>Fat (g)</th>
+        <th md-column md-numeric>Carbs (g)</th>
+        <th md-column md-numeric>Protein (g)</th>
+        <th md-column md-numeric>Sodium (mg)</th>
+        <th md-column md-numeric>Calcium (%)</th>
+        <th md-column md-numeric>Iron (%)</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row md-select="dessert" md-select-id="name" md-auto-select>
+        <td md-cell>Torta Helada</td>
+        <td md-cell>40</td>
+        <td md-cell>1</td>
+        <td md-cell>23</td>
+        <td md-cell>4</td>
+        <td md-cell>23</td>
+        <td md-cell>4</td>
+        <td md-cell>2</td>
+      </tr>
+			<tr md-row md-select="dessert" md-select-id="name" md-auto-select>
+        <td md-cell>Postre turron</td>
+        <td md-cell>40</td>
+        <td md-cell>1</td>
+        <td md-cell>23</td>
+        <td md-cell>4</td>
+        <td md-cell>23</td>
+        <td md-cell>4</td>
+        <td md-cell>2</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<div id="container" ng-if="home.pedidos.length > 0"></div>
+<div ng-if="home.pedidos.length == 0" style="width: 100%; height: 200px; position: relative;">
+	<span style="position: absolute; left: 50%; top: 50%; transform:translate(-50%, -50%); font-size: 1.2em">No hay datos para generar grafico estadistico</span>
+</div>

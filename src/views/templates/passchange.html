@@ -1,0 +1,34 @@
+<md-dialog aria-label="Cambiar Password" class="formularios">
+  <form ng-cloak ng-submit="pc.enviar()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Cambiar Contraseña</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="pc.cancel()">
+          <md-icon aria-label="Close dialog">
+            <i class="material-icons">close</i>
+          </md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label>Contraseña Actual</label>
+          <input type="password" name="currentPassword" ng-model="pc.password.currentPassword" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Nueva Contraseña</label>
+          <input type="password" name="newPassword" ng-model="pc.password.newPassword" required>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Confirmar Contraseña</label>
+          <input type="password" name="confirmPassword" ng-model="pc.password.confirmPassword" required>
+        </md-input-container>
+        <md-input-container layout layout-align="center">
+          <md-button type="submit" class="md-raised md-accent" flex="50" id="btnPassChange">{{pc.btnPassChange}}</md-button>
+        </md-input-container>
+    </md-dialog-content>
+  </form>
+</md-dialog>
